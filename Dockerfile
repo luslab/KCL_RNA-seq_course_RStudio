@@ -128,11 +128,11 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     libbz2-1.0 \
     libedit2 \
     # libicu55 \
-    libjpeg-turbo8 \
+    # libjpeg-turbo8 \
     libopenblas-dev \
     libpangocairo-1.0-0 \
     libpcre3 \
-    libpng12-0 \
+    # libpng12-0 \
     libtiff5 \
     liblzma5 \
     locales \
@@ -145,7 +145,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     libjpeg-dev \
     # libicu-dev \
     libpcre3-dev \
-    libpng-dev \
+    # libpng-dev \
     libreadline-dev \
     libtiff5-dev \
     liblzma-dev \
