@@ -1,0 +1,5 @@
+install.packages("XML")
+source("https://bioconductor.org/biocLite.R")
+biocLite("devtools")
+devtools::install_github("pachterlab/sleuth")
+biocLite("DESeq2")
