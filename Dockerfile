@@ -127,7 +127,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     libapparmor1 \
     libbz2-1.0 \
     libedit2 \
-    libicu55 \
+    # libicu55 \
     libjpeg-turbo8 \
     libopenblas-dev \
     libpangocairo-1.0-0 \
@@ -143,7 +143,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     libcairo2-dev \
     libpango1.0-dev \
     libjpeg-dev \
-    libicu-dev \
+    # libicu-dev \
     libpcre3-dev \
     libpng-dev \
     libreadline-dev \
