@@ -26,6 +26,10 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive  apt-get install -y \
     nodejs \
     python-dev \
     python-pip \
+    python-numpy \
+    python-matplotlib \
+    python-pysam \
+    python-htseq \
     python-setuptools \
     sudo \
     tzdata \
@@ -33,7 +37,6 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive  apt-get install -y \
     wget \
     zlib1g \
     zlib1g-dev
-
 
 ### HTSlib v1.8 ###
 ENV HTSLIB_INSTALL_DIR=/opt/htslib
