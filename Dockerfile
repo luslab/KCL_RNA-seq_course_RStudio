@@ -42,7 +42,7 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive  apt-get install -y \
 ENV HTSLIB_INSTALL_DIR=/opt/htslib
 
 WORKDIR /tmp
-RUN wget https://github.com/samtools/htslib/releases/download/1.8/htslib-1.8.tar.bz2 && \
+RUN wget -nv https://github.com/samtools/htslib/releases/download/1.8/htslib-1.8.tar.bz2 && \
     tar -j -xvf htslib-1.8.tar.bz2 && \
     cd /tmp/htslib-1.8 && \
     ./configure  --enable-plugins --prefix=$HTSLIB_INSTALL_DIR && \
@@ -54,7 +54,7 @@ RUN wget https://github.com/samtools/htslib/releases/download/1.8/htslib-1.8.tar
 ENV SAMTOOLS_INSTALL_DIR=/opt/samtools
 
 WORKDIR /tmp
-RUN wget https://github.com/samtools/samtools/releases/download/1.8/samtools-1.8.tar.bz2 && \
+RUN wget -nv https://github.com/samtools/samtools/releases/download/1.8/samtools-1.8.tar.bz2 && \
     tar -j -xf samtools-1.8.tar.bz2 && \
     cd /tmp/samtools-1.8 && \
     ./configure --with-htslib=$HTSLIB_INSTALL_DIR --prefix=$SAMTOOLS_INSTALL_DIR && \
@@ -66,13 +66,13 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.8/samtools-1.8
 
 ### Sambamba v0.6.7 ###
 RUN mkdir /opt/sambamba/ \
-    && wget https://github.com/biod/sambamba/releases/download/v0.6.7/sambamba_v0.6.7_linux.tar.bz2 \
+    && wget -nv https://github.com/biod/sambamba/releases/download/v0.6.7/sambamba_v0.6.7_linux.tar.bz2 \
     && tar --extract -j --directory=/opt/sambamba --file=sambamba_v0.6.7_linux.tar.bz2 \
     && ln -s /opt/sambamba/sambamba /usr/bin/sambamba
 
 ### FastQC v0.11.7 ###
 RUN mkdir /opt/fastqc/ \
-    && wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.7.zip \
+    && wget -nv http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.7.zip \
     && unzip fastqc_v0.11.7.zip -d /opt/fastqc \
     && chmod 755 /opt/fastqc/FastQC/fastqc \
     && ln -s /opt/fastqc/FastQC/fastqc /usr/bin/fastqc \
@@ -91,13 +91,13 @@ RUN mkdir /opt/trimgalore/ \
 
 ### Kallisto v0.44.0 ###
 RUN mkdir /opt/kallisto && cd /opt/kallisto && \
-    wget https://github.com/pachterlab/kallisto/releases/download/v0.44.0/kallisto_linux-v0.44.0.tar.gz && \
+    wget -nv https://github.com/pachterlab/kallisto/releases/download/v0.44.0/kallisto_linux-v0.44.0.tar.gz && \
     tar -xzvf kallisto_linux-v0.44.0.tar.gz && \
     ln -s /opt/kallisto/kallisto_linux-v0.44.0/kallisto /usr/bin/kallisto
 
 ### Picard v2.18.5 ###
 RUN mkdir /opt/picard/ \
-    && wget https://github.com/broadinstitute/picard/releases/download/2.18.5/picard.jar \
+    && wget -nv https://github.com/broadinstitute/picard/releases/download/2.18.5/picard.jar \
     && mv picard.jar /opt/picard/
 
 # Define a timezone so Java works properly
